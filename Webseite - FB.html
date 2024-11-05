@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onlinekurs - Professioneller Umgang mit Entlassungen</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        .quiz-section { margin-top: 20px; }
+        .question { font-weight: bold; }
+        .feedback { color: green; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Onlinekurs: Professioneller Umgang mit Entlassungen</h1>
+    <p>Willkommen zum Kurs! Bitte folgen Sie den Lektionen und beantworten Sie die Quizfragen.</p>
+    
+    <!-- Modul 1 -->
+    <section id="modul1">
+        <h2>Modul 1: Rechtliche und ethische Grundlagen von Entlassungen</h2>
+        <p>In diesem Modul lernen Sie die wichtigsten rechtlichen Grundlagen und ethischen Prinzipien kennen.</p>
+        
+        <div class="quiz-section" id="quiz1">
+            <p class="question">Frage 1: Wie lange beträgt die gesetzliche Kündigungsfrist in der Schweiz für Mitarbeitende, die weniger als ein Jahr im Betrieb sind?</p>
+            <button onclick="checkAnswer('quiz1', 'a')">a) 1 Monat</button>
+            <button onclick="checkAnswer('quiz1', 'b')">b) 3 Monate</button>
+            <button onclick="checkAnswer('quiz1', 'c')">c) 6 Monate</button>
+            <p class="feedback" id="feedback1"></p>
+        </div>
+        
+        <div class="quiz-section" id="quiz2">
+            <p class="question">Frage 2: Was ist bei einem Entlassungsgespräch aus ethischer Sicht besonders wichtig?</p>
+            <button onclick="checkAnswer('quiz2', 'a')">a) Schnell das Gespräch beenden</button>
+            <button onclick="checkAnswer('quiz2', 'b')">b) Respektvoll und empathisch kommunizieren</button>
+            <button onclick="checkAnswer('quiz2', 'c')">c) Unmissverständlich bleiben</button>
+            <p class="feedback" id="feedback2"></p>
+        </div>
+    </section>
+    
+    <!-- Modul 2 -->
+    <section id="modul2">
+        <h2>Modul 2: Kommunikation und emotionale Kompetenz im Entlassungsgespräch</h2>
+        <p>In diesem Modul lernen Sie, wie Sie empathisch und professionell kommunizieren.</p>
+        
+        <div class="quiz-section" id="quiz3">
+            <p class="question">Frage 3: Welches Verhalten ist zu Beginn eines Entlassungsgesprächs ratsam?</p>
+            <button onclick="checkAnswer('quiz3', 'a')">a) Sofort die Entlassung mitteilen</button>
+            <button onclick="checkAnswer('quiz3', 'b')">b) Eine ruhige und klare Einleitung geben</button>
+            <button onclick="checkAnswer('quiz3', 'c')">c) Den Mitarbeitenden reden lassen</button>
+            <p class="feedback" id="feedback3"></p>
+        </div>
+        
+        <div class="quiz-section" id="quiz4">
+            <p class="question">Frage 4: Welcher Satz ist in einem Entlassungsgespräch unangemessen?</p>
+            <button onclick="checkAnswer('quiz4', 'a')">a) „Wir schätzen Ihre Arbeit, aber…“</button>
+            <button onclick="checkAnswer('quiz4', 'b')">b) „Das ist jetzt eine endgültige Entscheidung!“</button>
+            <button onclick="checkAnswer('quiz4', 'c')">c) „Wir möchten Ihnen bei der Neuorientierung helfen.“</button>
+            <p class="feedback" id="feedback4"></p>
+        </div>
+    </section>
+</div>
+
+<script>
+    function checkAnswer(quizId, answer) {
+        const correctAnswers = {
+            'quiz1': 'a',
+            'quiz2': 'b',
+            'quiz3': 'b',
+            'quiz4': 'b'
+        };
+        
+        const feedbackElement = document.getElementById(`feedback${quizId.slice(-1)}`);
+        
+        if (correctAnswers[quizId] === answer) {
+            feedbackElement.textContent = "Richtig!";
+            feedbackElement.style.color = "green";
+        } else {
+            feedbackElement.textContent = "Falsch, bitte versuchen Sie es erneut.";
+            feedbackElement.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
